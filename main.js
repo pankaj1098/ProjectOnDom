@@ -7,6 +7,11 @@ function saveToLocalStorage(event){
         email,
     }
     localStorage.setItem(email, JSON.stringify(obj));
+    showNewUserOnScreen(obj)
 }
-
-
+//Details stored in the Local storage onto the screen
+function showNewUserOnScreen(user){
+    const parentNode= document.getElementById('users');
+    const childHTML = `<li> Name:-${user.name} ,Email:-${user.email} </li>`;
+    parentNode.innerHTML = parentNode.innerHTML + childHTML;
+}
